@@ -43,16 +43,17 @@
                 <td>${record.id}</td>
                 <td>${record.name}</td>
                 <td>${record.brewery_type}</td>
-                <td><a href="#${record.id}" onclick="getData('https://api.openbrewerydb.org/breweries/${record.id}', drawDetails)" >View More Details</a></td>    
+                <td><a href="#${record.id}" onclick="getData('https://api.openbrewerydb.org/v1/breweries/${record.id}', drawDetails)" >View More Details</a></td>    
               </tr>`;
           }
           result.innerHTML = html;//add html string to DOM
       }
 
       function drawDetails(record){
-        const section = document.querySelector('#details');
+        //const section = document.querySelector('#details');
+        let det = document.querySelector("#details");
         // details.innerHTML = `${JSON.stringify(record, null, 2)}`;
-        details.innerHTML = `<ul>
+        det.innerHTML = `<ul>
               <li>State: ${record.state}</li>
               <li>Country: ${record.country}</li>
               <li>Phone: ${record.phone}</li>
